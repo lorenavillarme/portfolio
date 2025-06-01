@@ -36,7 +36,6 @@ body {
 
 }
 
-
 ul {
     list-style: none
 }
@@ -230,6 +229,15 @@ img {
     transform: translate(-5vw)
 }
 
+#scroll-up {
+    position: fixed;
+    right: 6px;
+    bottom: 25px;
+    z-index: 100;
+    display: inline-flex;
+    cursor: pointer;
+}
+
 @media screen and (width<=1600px) {
     .case__intro__text h2 {
         padding-right: 20%
@@ -402,6 +410,11 @@ img {
         max-width: 100;
         width: 990px;
         height: 60vw
+    }
+
+       #scroll-up {
+        width: 35px;
+        height: 35px;
     }
 }
 
