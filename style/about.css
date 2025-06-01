@@ -78,7 +78,14 @@ a:hover {
     text-decoration: none
 }
 
-
+#scroll-up {
+    position: fixed;
+    right: 6px;
+    bottom: 25px;
+    z-index: 100;
+    display: inline-flex;
+    cursor: pointer;
+}
 
 .cursor {
     z-index: 500;
@@ -324,6 +331,11 @@ img {
     .about {
         padding-top: 20vh
     }
+
+    #scroll-up {
+        width: 35px;
+        height: 35px;
+    } 
 
     .about h2 {
         font-size: 12vw
