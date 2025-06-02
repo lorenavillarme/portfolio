@@ -114,3 +114,9 @@ const scrollUp = document.getElementById("scroll-up");
 scrollUp.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+const cursor = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', e => {
+    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+});
