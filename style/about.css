@@ -41,14 +41,14 @@ section {
 }
 
 @font-face {
-  font-family: 'SohneBreitHalbfett';
-  src: url('../fonts/Sohne/TestSohneBreit-Halbfett-BF663d89cacf645.otf') format('opentype');
+    font-family: 'SohneBreitHalbfett';
+    src: url('../fonts/Sohne/TestSohneBreit-Halbfett-BF663d89cacf645.otf') format('opentype');
 
 }
 
 @font-face {
-  font-family: 'Sohne';
-  src: url('../fonts/Sohne/TestSohne-Buch-BF663d89cd32e6a.otf') format('opentype');
+    font-family: 'Sohne';
+    src: url('../fonts/Sohne/TestSohne-Buch-BF663d89cd32e6a.otf') format('opentype');
 }
 
 :root {
@@ -78,14 +78,7 @@ a:hover {
     text-decoration: none
 }
 
-#scroll-up {
-    position: fixed;
-    right: 6px;
-    bottom: 25px;
-    z-index: 100;
-    display: inline-flex;
-    cursor: pointer;
-}
+
 
 .cursor {
     z-index: 500;
@@ -175,9 +168,23 @@ img {
     padding: 0 2vw
 }
 
+#scroll-up {
+    position: fixed;
+    right: 6px;
+    bottom: 25px;
+    z-index: 100;
+    display: inline-flex;
+    cursor: pointer;
+}
+
 @media screen and (width<=991px) {
     .container {
         padding: 0 4vw
+    }
+
+    #scroll-up {
+        width: 35px;
+        height: 35px;
     }
 }
 
@@ -331,11 +338,6 @@ img {
     .about {
         padding-top: 20vh
     }
-
-    #scroll-up {
-        width: 35px;
-        height: 35px;
-    } 
 
     .about h2 {
         font-size: 12vw
@@ -664,6 +666,7 @@ img {
     flex-direction: column;
     align-items: center;
 }
+
 a {
     text-decoration: none;
     color: inherit;
@@ -703,8 +706,8 @@ a {
 }
 
 .link {
-  text-decoration: underline;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 14rem;
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14rem;
 }
