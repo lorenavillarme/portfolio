@@ -17,6 +17,44 @@ body {
   align-items: center;
 }
 
+:root {
+  --smooth: cubic-bezier(.15, .9, .34, .95);
+  --custom: cubic-bezier(.76, 0, .24, 1)
+}
+
+.cursor {
+  z-index: 500;
+  pointer-events: none;
+  will-change: transform;
+  width: 1rem;
+  height: 1rem;
+  transition: transform .9s var(--smooth), opacity .3s var(--smooth);
+  position: fixed;
+  top: -1rem;
+  left: -1rem;
+  transform: translate(-100px, -100px)
+}
+
+.cursor:after {
+  content: "";
+  opacity: .4;
+  width: 100%;
+  height: 100%;
+  transition: all .4s var(--smooth);
+  background-color: #e4e4e4;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0
+}
+
+.cursor.hover:after {
+  opacity: .8;
+  background-color: #000;
+  transform: scale(.8)
+}
+
 .logo {
   font-family: 'SohneBreitHalbfett', sans-serif;
   letter-spacing: 0.1em;
@@ -52,7 +90,7 @@ body {
 
 .black-line {
   height: 3px;
-  width: 114%;
+  width: 504px;
   background-color: black;
   border-radius: 3px;
   margin-bottom: 12px;
@@ -93,22 +131,50 @@ button {
   font-family: 'Sohne', sans-serif;
   font-size: 1.125rem;
   font-weight: 500;
-  color: #0a0a0a;
   background: transparent;
   cursor: pointer;
   letter-spacing: -0.02em;
-  transition: background 0.2s ease, color 0.2s ease;
+  border: none;
 }
 
-#regular-button {
-  padding: 0.75rem 2rem;
+
+.cta {
+  height: 3.2rem;
+  transition: background-color .4s var(--custom);
   border: 2px solid #25FF1E;
-  border-radius: 9999px;
+  background-color: #fff;
+  border-radius: 2.4rem;
+  align-items: center;
+  padding: 0 2.4rem;
+  display: inline-flex;
+  position: relative;
+  overflow: hidden
 }
 
-#regular-button:hover {
-  background: #25FF1E;
+.cta span {
+  transition: all .4s var(--custom);
+  display: block
+}
+
+.cta .hover {
   color: #fff;
+  filter: blur(5px);
+  position: absolute;
+  transform: translateY(150%)scale(1.2)
+}
+
+.cta:hover {
+  background-color: #25FF1E
+}
+
+.cta:hover .default {
+  filter: blur(5px);
+  transform: translateY(-150%)scale(.8)
+}
+
+.cta:hover .hover {
+  filter: blur();
+  transform: translate(0, 0)scale(1)
 }
 
 #non-regular-button {
@@ -183,7 +249,9 @@ a {
   padding: 0 25px;
 }
 
-@media (max-width: 768px) {
+
+
+@media screen and (width <=1150px) {
   .info-block {
     grid-template-columns: 1fr;
   }
@@ -201,4 +269,33 @@ a {
   .logo {
     display: none;
   }
+
+   .img-block,
+  .text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+   .text-block h1 {
+    margin-top: 0px;
+    text-align: center;
+    max-width: 565px;
+  }
+
+}
+
+
+@media screen and (width <=500px) {
+
+  img,
+  .black-line {
+    width: 80%;
+  }
+
+  .text-block h1 {
+    max-width: 365px;
+  }
+
 }
