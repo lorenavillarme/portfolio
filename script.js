@@ -82,6 +82,27 @@ const side_imgs = {
 };
 
 
+function smoothScrollToTop(duration = 1000) {
+  const start = window.scrollY;
+  const startTime = performance.now();
+
+  function scroll(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+
+    window.scrollTo(0, start * (1 - ease));
+
+    if (progress < 1) {
+      requestAnimationFrame(scroll);
+    }
+  }
+
+  requestAnimationFrame(scroll);
+}
+
+
+
 function updatePhotos() {
     const currentTitle = titles[currentIndex];
     imageDiv.style.backgroundImage = backgrounds[currentTitle] || "none";
@@ -91,7 +112,7 @@ function updatePhotos() {
 
 function updateProject() {
     titleEl.textContent = titles[currentIndex];
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    smoothScrollToTop(1000);
 }
 
 [nextBtn, nextBtnMobile].forEach(btn =>
