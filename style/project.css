@@ -284,6 +284,7 @@ img {
         position: absolute;
         top: 10vh;
         left: 20vw;
+        margin-top: 40px;
     }
 }
 
