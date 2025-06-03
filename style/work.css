@@ -663,3 +663,16 @@ a {
     }
 
 }
+
+#project-description .short-text {
+  display: none;
+}
+
+@media (max-width: 400px) {
+  #project-description .full-text {
+    display: none;
+  }
+  #project-description .short-text {
+    display: inline;
+  }
+}
