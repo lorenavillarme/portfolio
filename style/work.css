@@ -682,10 +682,8 @@ a {
         display: inline;
     }
 
-    #extra_text {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        white-space: normal;
+   #extra_text {
+        max-width: 365px;
         text-align: center;
     }
 }
