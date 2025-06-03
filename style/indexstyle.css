@@ -299,3 +299,18 @@ a {
   }
 
 }
+
+@media screen and (width <=400px) {
+
+  .projects-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  #non-regular-button {
+    margin-left: 30px;
+  }
+
+}
