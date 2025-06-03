@@ -31,7 +31,14 @@ window.addEventListener('scroll', () => {
 const titles = ["naturecol", "dimension", "bookie"];
 const lil_text = ["UX/UI", "UX/UI", "UX/UI PROCESS"];
 const big_text = ["PROCESS", "PROCESS", "CODE"];
-const project_descriptions = ["Naturecol is an ideal app for those who want to lead a healthy lifestyle through nutrition. It offers articles on natural remedies, protocols for certain conditions, a personalized user follow-up plan, and access to a supplement store.", "This landing page creatively and visually showcases a selection of 3D renders developed by the Dimension.<br><br>The entire design carefully follows modern and minimalist style guidelines, prioritizing visual harmony, usability, and intuitive navigation that reinforces the agency’s brand identity.", "Tired of seeing your books collect dust on the shelf, but still dreaming of reading that one special book?<br><br>Bookie is an app that lets you exchange books for free with other users, giving your books a new life while finally getting your hands on that book you've been wanting to read."];
+
+const full_descriptions = ["Naturecol is an ideal app for those who want to lead a healthy lifestyle through nutrition. It offers articles on natural remedies, protocols for certain conditions, a personalized user follow-up plan, and access to a supplement store.", "This landing page creatively and visually showcases a selection of 3D renders developed by the Dimension.<br><br>The entire design carefully follows modern and minimalist style guidelines, prioritizing visual harmony, usability, and intuitive navigation that reinforces the agency’s brand identity.", "Tired of seeing your books collect dust on the shelf, but still dreaming of reading that one special book?<br><br>Bookie is an app that lets you exchange books for free with other users, giving your books a new life while finally getting your hands on that book you've been wanting to read."];
+const short_descriptions = [
+    "Naturecol helps you live healthy through nutrition.",
+    "Landing with 3D renders in a clean, modern style.",
+    "Exchange books for free and find your next read."
+];
+
 const extra_texts = ["HEALTH BEGINS WITH NATURAL CHOICES", "DISCOVER DESIGN THROUGH DIMENSION", "IF YOU DON’T READ IT UPLOAD IT"];
 const view_more_links = ["naturecol.html", "dimension.html", "bookie.html"];
 let currentIndex = 0;
@@ -40,13 +47,19 @@ const imageDiv = document.querySelector(".image");
 const phone = document.getElementById("phone");
 const side_img = document.querySelector(".side_img");
 const titleEl = document.getElementById("project-title");
+
 const lil = document.getElementById("lil");
 const big = document.getElementById("big");
+
 const project_description = document.getElementById("project-description");
+const useShort = window.innerWidth <= 400;
+
 const extra_text = document.getElementById("extra_text");
 const view_more = document.getElementById("view_more");
+
 const nextBtn = document.getElementById("next-btn");
 const backBtn = document.getElementById("back-btn");
+
 const nextBtnMobile = document.getElementById("next-btn-mobile");
 const backBtnMobile = document.getElementById("back-btn-mobile");
 
@@ -87,9 +100,17 @@ function updateProject() {
         titleEl.textContent = titles[currentIndex];
         lil.textContent = lil_text[currentIndex];
         big.textContent = big_text[currentIndex];
-        project_description.innerHTML = project_descriptions[currentIndex];
+
+
+        const isSmallScreen = window.innerWidth <= 400;
+        const description = isSmallScreen
+            ? short_descriptions[currentIndex]
+            : full_descriptions[currentIndex];
+        project_description.innerHTML = description;
+
         extra_text.textContent = extra_texts[currentIndex];
         view_more.href = view_more_links[currentIndex];
+
         updatePhotos();
         updateProject();
     })
@@ -101,22 +122,32 @@ function updateProject() {
         titleEl.textContent = titles[currentIndex];
         lil.textContent = lil_text[currentIndex];
         big.textContent = big_text[currentIndex];
-        project_description.innerHTML = project_descriptions[currentIndex];
+
+
+        const isSmallScreen = window.innerWidth <= 400;
+        const description = isSmallScreen
+            ? short_descriptions[currentIndex]
+            : full_descriptions[currentIndex];
+        project_description.innerHTML = description;
+
         extra_text.textContent = extra_texts[currentIndex];
         view_more.href = view_more_links[currentIndex];
+
         updatePhotos();
         updateProject();
     })
 );
 
-window.addEventListener("DOMContentLoaded", () => {
-  const cursor = document.querySelector('.cursor');
 
-  document.addEventListener('mousemove', e => {
-    if (cursor) {
-      cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-    }
-  });
+
+window.addEventListener("DOMContentLoaded", () => {
+    const cursor = document.querySelector('.cursor');
+
+    document.addEventListener('mousemove', e => {
+        if (cursor) {
+            cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        }
+    });
 });
 
 
