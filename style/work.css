@@ -691,6 +691,6 @@ a {
     }
 
     .work_intro {
-        margin-right: 80px;
+        gap: 0px;
     }
 }
