@@ -158,7 +158,9 @@ a:hover {
 
 html {
     background-color: #fff;
-    overflow-x: hidden
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
 }
 
 body {
@@ -262,10 +264,12 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-image 0.4s ease-in-out, opacity 0.4s ease-in-out;
 }
 
 #phone {
     margin-top: -150px;
+    transition: opacity 0.4s ease-in-out;
 }
 
 .details {
@@ -296,6 +300,7 @@ a {
     background-position: center;
     width: 650px;
     height: 640px;
+    transition: background-image 0.4s ease-in-out, opacity 0.4s ease-in-out;
 }
 
 
@@ -563,7 +568,7 @@ a {
 }
 
 @media screen and (max-width: 700px) and (min-width: 500px) {
-  .desktop {
+    .desktop {
         display: none;
     }
 
@@ -572,8 +577,8 @@ a {
     }
 
     .project {
-    flex-direction: column;
-  }
+        flex-direction: column;
+    }
 }
 
 
@@ -665,14 +670,15 @@ a {
 }
 
 #project-description .short-text {
-  display: none;
+    display: none;
 }
 
-@media (max-width: 400px) {
-  #project-description .full-text {
-    display: none;
-  }
-  #project-description .short-text {
-    display: inline;
-  }
+@media (max-width: 500px) {
+    #project-description .full-text {
+        display: none;
+    }
+
+    #project-description .short-text {
+        display: inline;
+    }
 }
