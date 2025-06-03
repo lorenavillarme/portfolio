@@ -686,5 +686,7 @@ a {
         max-width: 365px;
         text-align: center;
         line-height: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
