@@ -693,4 +693,8 @@ a {
     .work_intro {
         gap: 0px;
     }
+
+    .title_intro {
+        font-size: 30px;
+    }
 }
