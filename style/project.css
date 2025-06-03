@@ -502,6 +502,16 @@ img {
     }
 }
 
+@media screen and (width<=500px) {
+    .scroll {
+        margin-top: -30px;
+    }
+
+    #text_ {
+        font-size: 20px;
+    }
+}
+
 
 .splitting .word,
 .splitting .char {
